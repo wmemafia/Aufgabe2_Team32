@@ -1,0 +1,275 @@
+/*
+ * CSS mobile first
+ */
+
+/*
+ * Layout for whole site
+ */
+body {
+	font-size: 14px;
+	font-family: Roboto, Verdana, sans-serif;
+	line-height: 1.45;
+}
+
+h1 {
+	padding: 40px 0 20px 0;
+	font-size: 45px;
+	font-weight: lighter;
+}
+
+#page-wrapper {
+	margin: 0 auto;
+	max-width: 1170px;
+}
+
+/**
+ * Utility Classes
+ */
+a {
+	color: #8EC541;
+}
+
+a:hover {
+	color: #628F1D;
+	text-decoration: none;
+}
+
+.text-right {
+	text-align: left;
+}
+
+.clearing {
+	clear: both;
+}
+
+/**
+ * Responsive class
+ */
+.small-100 {
+	float: none;
+}
+
+/*
+ * Header Styles
+ */
+header {
+	background: #d1d1d1;
+	position: sticky;
+	top: 0;
+	border-bottom: 1px solid #d1d1d1;
+	background: linear-gradient(to bottom, #d1d1d1 0%,#f0f0f0 100%);
+}
+
+img#logo:hover {
+	filter: url(img/desaturate.svg#greyscale);
+}
+
+#logo {
+	margin: 0 50px 0 0;
+	cursor: pointer;
+}
+
+nav,
+ul {
+	height: auto;
+}
+
+.menu:first-child {
+	border-left: 1px solid #d1d1d1;
+}
+
+.menu {
+	float: left;
+	background: #ffffff;
+	width: 100%;
+	display: none;
+	position: absolute;
+}
+
+.menu li {
+	border-right: 1px solid #d1d1d1;
+	height: 100%;
+	font-size: 16px;
+	color: #555;
+	transition: 0.5s ease;
+	cursor: pointer;
+	padding: 15px 15px;
+}
+
+.menu li:hover {
+	background: #ccc;
+	color: #000;
+}
+
+.menu-sandwich {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	display: inline-block;
+	font-size: 20px;
+	padding: 5px 7px;
+	background: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.menu-sandwich:hover {
+	background: #666;
+}
+
+/**
+ * Main Styles
+ */
+
+#responsive-content {
+	-webkit-column-count: 1;
+	-moz-column-count: 1;
+	column-count: 1;
+	border: 1px solid #d1d1d1;
+	border-top: 2px solid #8EC541;
+	box-shadow: 0 2px 10px 0px #d1d1d1;
+	padding: 14px 10px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+/**
+ * Table Styles
+ */
+table {
+	width: 100%;
+}
+
+thead {
+	text-align: left;
+	font-size: 15px;
+}
+
+thead a {
+	text-decoration: none;
+}
+
+thead tr td {
+	border-bottom: 2px solid #666;
+}
+
+tr th,
+tr td {
+	padding: 6px 3px;
+	border-bottom: 1px solid #d1d1d1;
+}
+
+tr th:nth-child(6),
+tr th:nth-child(7),
+tr td:nth-child(6),
+tr td:nth-child(7) {
+	display: none;
+}
+
+/**
+ * Visibility Switches for table
+ */
+.toggles {
+	color: #666;
+	padding: 20px 0;
+}
+
+.toggles a {
+	color: #aaa;
+	outline: none;
+}
+
+.toggles a:hover {
+	text-decoration: none;
+}
+
+/**
+ * Footer Styles
+ */
+footer {
+	border-top: 2px solid #8EC541;
+	padding: 15px 0 30px;
+}
+
+/**
+ * Styles for medium screens (a.k.a Tablets)
+ */
+@media screen and (min-width: 768px) {
+
+	#responsive-content {
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+	}
+
+	tr th,
+	tr td {
+		padding: 6px 0;
+	}
+
+	tr th:nth-child(6),
+	tr td:nth-child(6) {
+		display: table-cell;
+	}
+
+	.medium-50 {
+		width: 50%;
+		float: left;
+	}
+
+	.text-right {
+		text-align: right;
+	}
+
+}
+
+/**
+ * Responsive Nav Media Query
+ */
+@media screen and (min-width: 915px) {
+	
+	nav,
+	ul {
+		height: 83px;
+	}
+
+	.menu {
+		display: block;
+		background: inherit;
+		left: 200px;
+		width: inherit;
+	}
+
+	#logo,
+	.menu,
+	.menu li {
+		float: left;
+	}
+
+	.menu li {
+		padding: 40px 15px;
+	}
+
+	.menu-sandwich {
+		display: none;
+	}
+
+}
+
+/**
+ * Styles for large screens (a.k.a Desktops)
+ */
+@media screen and (min-width: 1200px) {
+	
+	#responsive-content {
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+	column-count: 3;
+	}
+
+	tr th:nth-child(7),
+	tr td:nth-child(7) {
+		display: table-cell;
+	}
+    
+}
