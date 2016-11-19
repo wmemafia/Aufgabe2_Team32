@@ -2,12 +2,15 @@
 
 class WorldDataParser {
 
-    public function parseCSV(string $path) {
+    public function parseCSV($path) {
         $data = array();
         if(($handle = fopen($path, "r")) !== FALSE) {
             $i = 0;
+            $head = fgetcsv($handle);
             while (($line = fgetcsv($handle)) !== FALSE) {
-                $data[$i] = $line;
+                for($j = 0; $j < count($head); $j++) {
+                    $data[$i][str_replace(' ', '_', trim($head[$j]))] = $line[$j];
+                }
                 $i++;
             }
             
@@ -23,11 +26,10 @@ class WorldDataParser {
         $handle = fopen('../data/wold_data.xml', 'w');
         $content = '<xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
         $content .= '<Countries>'  .PHP_EOL;
-        for($i = 1; $i < count($data); $i++) {
+        for($i = 0; $i < count($data); $i++) {
             $content .= '<Country>' . PHP_EOL;
-            for($j = 0; $j < count($data[0]); $j++) {            
-                $elemName = str_replace(' ', '_', trim($data[0][$j]));
-                $content .= '<' . $elemName . '>' . trim($data[$i][$j]) . '</' . $elemName . '>' . PHP_EOL;
+            foreach($data[$i] as $key => $value) {
+                $content .= '<' . $key . '>' . trim($value) . '</' . $key . '>' . PHP_EOL;
             }
             $content .= '</Country>' . PHP_EOL;
         }
