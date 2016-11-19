@@ -23,8 +23,8 @@ class WorldDataParser {
     */
 
     public function saveXML(array $data) {
-        $handle = fopen('../data/wold_data.xml', 'w');
-        $content = '<xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+        $handle = fopen('../data/world_data.xml', 'w');
+        $content = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
         $content .= '<Countries>'  .PHP_EOL;
         for($i = 0; $i < count($data); $i++) {
             $content .= '<Country>' . PHP_EOL;
@@ -36,6 +36,20 @@ class WorldDataParser {
         $content .= '</Countries>';
         fwrite($handle, $content);
         fclose($handle);
+    }
+
+    public function printXML($XMLPath, $XSTLPath) {
+        $xml = new DOMDocument();
+        $xml->load($XMLPath);
+
+        $xsl = new DOMDocument();
+        $xsl->load($XSTLPath);
+
+        $xsltprocessor = new XSLTProcessor();
+        $xsltprocessor->importStylesheet($xsl);
+
+        return $xsltprocessor->transformToXML($xml);
+
     }
 
 }
