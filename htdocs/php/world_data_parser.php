@@ -18,10 +18,6 @@ class WorldDataParser {
         }
     }
 
-    /**
-    * #TODO: add return value (boolean)
-    */
-
     public function saveXML(array $data) {
         $handle = fopen('../data/world_data.xml', 'w');
         $content = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
@@ -34,8 +30,14 @@ class WorldDataParser {
             $content .= '</Country>' . PHP_EOL;
         }
         $content .= '</Countries>';
-        fwrite($handle, $content);
-        fclose($handle);
+        if(fwrite($handle, $content) !== FALSE) {
+            fclose($handle);
+            return TRUE;
+        }
+        else {
+            fclose($handle);
+            return FALSE;
+        }
     }
 
     public function printXML($XMLPath, $XSTLPath) {
