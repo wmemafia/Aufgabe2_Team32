@@ -4,7 +4,7 @@ require_once('world_data_parser.php');
 $parser = new WorldDataParser();
 $data = $parser->parseCSV('../data/world_data.csv');
 if($parser->saveXML($data)) {
-	$result = 'The write process for the XML file was successful.';
+	$result = 'The write process of the XML file was successful.';
 }
 else {
 	$result = 'There was an error while writing the file. Please consult the error log.';
@@ -41,13 +41,15 @@ else {
 	<body id="page" onresize="unresponsiveIt()" onload="unresponsiveIt()">
 		<div id="page-wrapper">
 			<header id="header">
-				<img id="logo" src="../img/logo.png" alt="Logo" />
+				<a href="../index.html">
+					<img id="logo" src="../img/logo.png" alt="Logo" />
+				</a>
 				<nav id="navigation">
 					<ul id="menu" class="menu">
-						<li><i class="fa fa-list-ul" aria-hidden="true"></i> A1 - Table</li>
-						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="/php/parse.php"> A2 - Parse</a></li>
-						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="/php/save.php"> A2 - Save</a></li>
-						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="/php/print.php"> A2 - Print</a></li>
+						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="../index.html"> A1 - Table</a></li>
+						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="../php/parse.php"> A2 - Parse</a></li>
+						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="../php/save.php"> A2 - Save</a></li>
+						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="../php/print.php"> A2 - Print</a></li>
 						<li><i class="fa fa-list-ul" aria-hidden="true"></i> A3 - REST</li>
 						<li><i class="fa fa-list-ul" aria-hidden="true"></i> A4 - Vis</li>
 					</ul>
