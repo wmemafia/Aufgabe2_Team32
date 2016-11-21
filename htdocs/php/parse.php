@@ -19,7 +19,7 @@ $data = $parser->parseCSV('../data/world_data.csv');
 
 		<!-- This is so meta -->
 		<meta name="description" content="This is the first excercise in WME 2016. TU Dresden." />
-		<meta name="author" content="Mics21, MarauderXtreme" />
+		<meta name="author" content="Michael Schneider, Christoph Kepler" />
 		<meta name="keywords" content="Much HTML5, So CSS3, Such JS, WOW" />
 
 		<!-- Keywords are obsolet since search machines don't process them anymore' -->
@@ -78,7 +78,7 @@ $data = $parser->parseCSV('../data/world_data.csv');
 						This solution has been created by:
 					</p>
 					<p>
-						@Mics21 and @MarauderXtreme - Team 32
+						Michael Schneider and Christoph Kepler - Team 32
 					</p>
 				</div><!-- /footer right column -->
 				<div class="clearing"></div><!-- clear responsive footer -->
