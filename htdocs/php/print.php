@@ -43,9 +43,9 @@ $html = $parser->printXML('../data/world_data.xml', '../data/world_data.xsl');
 				<nav id="navigation">
 					<ul id="menu" class="menu">
 						<li><i class="fa fa-list-ul" aria-hidden="true"></i> A1 - Table</li>
-						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="php/parse.php"> A2 - Parse</a></li>
-						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="php/save.php"> A2 - Save</a></li>
-						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="php/print.php"> A2 - Print</a></li>
+						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="/php/parse.php"> A2 - Parse</a></li>
+						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="/php/save.php"> A2 - Save</a></li>
+						<li><i class="fa fa-list-ul" aria-hidden="true"></i><a href="/php/print.php"> A2 - Print</a></li>
 						<li><i class="fa fa-list-ul" aria-hidden="true"></i> A3 - REST</li>
 						<li><i class="fa fa-list-ul" aria-hidden="true"></i> A4 - Vis</li>
 					</ul>
