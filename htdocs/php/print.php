@@ -84,7 +84,7 @@ $html = $parser->printXML('../data/world_data.xml', '../data/world_data.xsl');
 						Copyright &copy; 2015 world_data
 					</p>
 					<p>
-						First course exercise <strong>HTML, CSS and JS</strong> of the lecture Web and Multimedia Engineering.
+						Second course exercise <strong>HTML, CSS and JS</strong> of the lecture Web and Multimedia Engineering.
 					</p>
 				</div><!-- /footer left column -->
 				<div class="small-100 medium-50 text-right">
